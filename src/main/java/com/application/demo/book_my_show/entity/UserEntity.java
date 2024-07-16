@@ -2,14 +2,19 @@ package com.application.demo.book_my_show.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserEntity {
 
     @Id
@@ -28,5 +33,8 @@ public class UserEntity {
     private String mobile;
 
     private String address;
+
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    private List<TicketEntity> bookedTickets = new ArrayList<>();
 
 }

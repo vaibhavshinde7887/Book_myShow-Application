@@ -3,15 +3,14 @@ package com.application.demo.book_my_show.entity;
 
 import com.application.demo.book_my_show.enums.SeatType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "theater_seats")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class TheaterSeatEntity {
 
     @Id
@@ -22,5 +21,11 @@ public class TheaterSeatEntity {
     private SeatType seatType;
 
     private String seatNo;
+
+    //    this is child with respect to show
+
+    @JoinColumn
+    @ManyToOne
+    private TheaterEntity theaterEntity;
 
 }
