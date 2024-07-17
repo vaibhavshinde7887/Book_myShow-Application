@@ -25,14 +25,14 @@ public class TheaterEntity {
 
     private String location;
 
-    //    this is parent with respect to show
-
+    // this is parent wrt to shows
     @OneToMany(mappedBy = "theaterEntity", cascade = CascadeType.ALL)
     private List<ShowEntity> listOfShows = new ArrayList<>();
 
-    //    this is parent with respect to theaterSeat
-
+    // this is parent wrt to theater seat
     @OneToMany(mappedBy = "theaterEntity", cascade = CascadeType.ALL)
-    private List<TheaterSeatEntity> listOfTheatersSeats  = new ArrayList<>();
+    private List<TheaterSeatEntity> listOfTheaterSeats = new ArrayList<>();
+
+
 
 }
