@@ -22,7 +22,7 @@ public class ShowSeatEntity {
 
     private Boolean isBooked;
 
-    private int price;
+    private double price;
 
     @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
