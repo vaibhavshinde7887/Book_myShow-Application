@@ -3,9 +3,7 @@ package com.application.demo.book_my_show.controller;
 import com.application.demo.book_my_show.entity.MovieEntity;
 import com.application.demo.book_my_show.enums.Language;
 import com.application.demo.book_my_show.requestdtos.MovieRequestDto;
-import com.application.demo.book_my_show.requestdtos.UserRequestDto;
 import com.application.demo.book_my_show.service.MovieService;
-import com.application.demo.book_my_show.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +22,7 @@ public class MovieController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<?> addUser(@RequestBody MovieRequestDto movieRequestDto){
+    public ResponseEntity<?> addMovie(@RequestBody MovieRequestDto movieRequestDto){
         try{
             String response = movieService.addMovie(movieRequestDto);
             return new ResponseEntity<>(response, HttpStatus.CREATED);
