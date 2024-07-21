@@ -6,7 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "show_seats")
@@ -21,6 +22,14 @@ public class ShowSeatEntity {
     private int id;
 
     private Boolean isBooked;
+
+    public Boolean getBooked() {
+        return isBooked;
+    }
+
+    public void setBooked(Boolean booked) {
+        isBooked = booked;
+    }
 
     private double price;
 
