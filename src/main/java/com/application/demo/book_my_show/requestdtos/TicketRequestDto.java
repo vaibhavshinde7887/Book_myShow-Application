@@ -8,11 +8,9 @@ import java.util.List;
 @Data
 public class TicketRequestDto {
 
-
-
     private int userId;
 
     private int showId;
 
-    private List<String> requestedSeat = new ArrayList<>();
+    private List<String> requestedSeats = new ArrayList<>();
 }
